@@ -44,17 +44,17 @@ export default class Crud extends Component {
         .filter((makanan) => makanan.id !== this.state.id)
         .map((filterMakanan) => filterMakanan);
 
-        this.setState({
-          makanans: [
-            ...makananTidakDipilih,
-            {
-              nama: this.state.nama,
-              harga: this.state.harga,
-              deskripsi: this.state.deskripsi,
-              id: this.state.makanans.length + 1,
-            },
-          ],
-        });
+      this.setState({
+        makanans: [
+          ...makananTidakDipilih,
+          {
+            nama: this.state.nama,
+            harga: this.state.harga,
+            deskripsi: this.state.deskripsi,
+            id: this.state.makanans.length + 1,
+          },
+        ],
+      });
     }
     // tidak sama dengan !==
 
@@ -94,6 +94,17 @@ export default class Crud extends Component {
     });
   };
 
+  // hapus data
+  hapusData = (id) => {
+    const makananBaru = this.state.makanans
+      .filter((makanan) => makanan.id !== id)
+      .map((filterMakanan) => filterMakanan);
+
+    this.setState({
+      makanans: makananBaru,
+    });
+  };
+
   render() {
     // console.log(this.state.makanans)
     return (
@@ -101,7 +112,11 @@ export default class Crud extends Component {
         <ListNavbar />
         <div className="container-sm mt-4">
           <h2>CRUD REACT JS</h2>
-          <ListTable makanans={this.state.makanans} editData={this.editData} />
+          <ListTable
+            makanans={this.state.makanans}
+            editData={this.editData}
+            hapusData={this.hapusData}
+          />
           <ListForm
             {...this.state}
             handleChange={this.handleChange}

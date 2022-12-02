@@ -2,12 +2,12 @@ import React from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 
 
-const ListForm = ({nama, harga, deskripsi, handleChange, handleSubmit }) => {
+const ListForm = ({nama, harga, deskripsi, handleChange, handleSubmit, id }) => {
   return (
     <div className="mt-5">
       <Row>
         <Col>
-          <h4>Tambah Data</h4>
+          <h4>{id ? "Edit Data" : "Tambah Data"}</h4>
           <hr />
         </Col>
       </Row>
