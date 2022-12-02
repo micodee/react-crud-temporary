@@ -8,7 +8,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const ListNavbar = () => {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="dark" variant="dark" expand="lg">
       <Container fluid>
         <Navbar.Brand href="#">CRUD React</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -41,7 +41,7 @@ const ListNavbar = () => {
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Search</Button>
+            <Button variant="outline-danger">Search</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
