@@ -32,9 +32,6 @@ const ListForm = ({nama, harga, deskripsi, handleChange, handleSubmit }) => {
               value={deskripsi} onChange={(event) => handleChange(event)}/>
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="Apakah data sudah benar?" />
-            </Form.Group>
             <Button variant="primary" type="submit">
               Submit
             </Button>
